@@ -9,6 +9,7 @@
 <body>
     <script src="vue.js"></script>
     <div id="app">
+        <input type="text" name="" id="" v-on:input="Nhaptext">
         {{noidung}}
     </div>
 </body>
@@ -17,7 +18,12 @@
         el:'#app',
         data: {
             noidung : 'Trung Hiếu đẹp trai'
-        }
+        },
+        methods: {
+            Nhaptext: function(event){
+                this.noidung = event.target.value;
+            }
+        },
     })
 </script>
 </html>
