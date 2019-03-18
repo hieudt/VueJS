@@ -25,10 +25,18 @@
         <input type="text" v-on:input="textToInp">
         <button v-on:click="insertTodo">Insert</button>
         <ol>
-            <li v-for="todo in todos">
+            <li v-for="todo in List">
                 {{todo.text}}
             </li>
         </ol>
+
+
+        <h1>Lession : Rang buoc 2 chieu </h1>
+        <p>{{l2Message}}</p>
+        <input v-model="l2Message">
+
+        <h1>Lession : Component </h1>
+        <a href="componentOne.php">Click here</a>
     </div>
 </body>
 <script>
@@ -40,7 +48,8 @@
             seen:true,
             touch : 0,
             textTodo : '',
-            todos: [ ],
+            List: [ ],
+            l2Message :'Edit me',
         },
         methods: {
             Nhaptext: function(event) {
@@ -52,7 +61,7 @@
             },
 
             insertTodo: function(){
-                this.todos.push({text: this.textTodo}) 
+                this.List.push({text: this.textTodo}) 
             },
 
             touchButton: function(){
